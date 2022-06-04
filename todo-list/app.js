@@ -11,6 +11,27 @@ todoButton.addEventListener("click", addTodo);
 function addTodo(event){
     // prevent the form from submitting 
     event.preventDefault();
-    
+
+    //todo div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo"); // add the class to the element
+    //create li
+    const newTodo = document.createElement("li");
+    newTodo.innerText = "hey";
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
+    //checkmark  button
+    const completedButton = document.createElement("button");
+    completedButton.innerHTML =`<i class="fas fa-check"></i>`;
+    completedButton.classList.add("completed-btn");
+    todoDiv.appendChild(completedButton);
     console.log("hello");
+     //trash  button
+     const trashButton = document.createElement("button");
+     trashButton.innerHTML =`<i class="fas fa-trash"></i>`;
+     trashButton.classList.add("trash-btn");
+     todoDiv.appendChild(trashButton);
+    //append to list 
+    todoList.appendChild(todoDiv)
+     console.log("hello");
 }
